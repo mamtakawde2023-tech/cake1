@@ -2,11 +2,10 @@
 session_start();
 include "includes/db_connect.php";
 
-// Dynamic links for logged-in users
-$get_started_link = isset($_SESSION['user_id']) ? 'cakes.php' : 'register.php';
-$order_link = isset($_SESSION['user_id']) ? 'cakes.php' : 'register.php';
+// Dynamic links for buttons
+$get_started_link = isset($_SESSION['user_id']) ? 'cakes.php' : 'login.php';
+$order_link = isset($_SESSION['user_id']) ? 'cakes.php' : 'login.php';
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,18 +61,13 @@ $order_link = isset($_SESSION['user_id']) ? 'cakes.php' : 'register.php';
 
 <!-- Contact Us Section -->
 <section id="contact" class="contact-section">
-    <h2>Contact Us</h2>
-    <form action="contact_process.php" method="POST">      
-
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-    </form>
+    <div class="contact-box">
+        <h2>Contact Us</h2>
+        <form action="contact_process.php" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
 </section>
-
-<?php include "includes/footer.php"; ?>
-</body>
-</html>
-
-

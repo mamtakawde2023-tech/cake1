@@ -1,6 +1,6 @@
-<?php 
-include "includes/db_connect.php";
+<?php
 session_start();
+include "includes/db_connect.php";
 
 // Handle search
 $search = '';
@@ -13,8 +13,11 @@ if(isset($_GET['search'])){
     $stmt->execute();
 }
 $cakes = $stmt->fetchAll(PDO::FETCH_ASSOC);
-?>
 
+// Check login for Order button
+$user_id = $_SESSION['user_id'] ?? 0;
+$order_target = $user_id ? '' : 'login.php'; // dynamically set per cake
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,19 +49,15 @@ if($cakes){
         echo '<h3>' . htmlspecialchars($cake['name']) . '</h3>';
         echo '<p>Price: ₹' . htmlspecialchars($cake['price']) . '</p>';
 
-        // Show overall rating only
+        // Rating display
         $rating_text = ($cake['rating_count'] > 0) ? round($cake['rating'],1) . " ⭐" : "Not rated yet";
         echo '<p>Rating: ' . $rating_text . '</p>';
 
-        // Check if user is logged in
-        if(isset($_SESSION['user_id'])){
-            // Direct to customization page
-            echo '<a href="cake_detail.php?id=' . $cake['id'] . '" class="btn-order">Order Now</a> ';
-        } else {
-            echo '<a href="login.php" class="btn-order">Order Now</a>';
-        }
+        // Order button logic
+        $order_href = $user_id ? "cake_detail.php?id={$cake['id']}" : "login.php";
+        echo '<a href="' . $order_href . '" class="btn-order">Order Now</a> ';
 
-        // View Details button
+        // View Details button (always allowed)
         echo '<a href="cake_detail.php?id=' . $cake['id'] . '" class="btn-detail">View Details</a>';
 
         echo '</div>';

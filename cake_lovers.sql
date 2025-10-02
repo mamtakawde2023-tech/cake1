@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 27, 2025 at 05:38 AM
+-- Generation Time: Oct 03, 2025 at 12:40 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -65,8 +65,8 @@ CREATE TABLE `cakes` (
 --
 
 INSERT INTO `cakes` (`id`, `name`, `image`, `description`, `price`, `rating`, `rating_count`, `size`, `stock`) VALUES
-(1, 'Chocolate Cake', 'chocolate_cake.jpg', 'Rich and moist chocolate cake layered with silky chocolate ganache.', 500, 0, 0, '1 kg', 10),
-(2, 'Vanilla Cake', 'vanilla_cake.jpg\r\n', 'Classic vanilla sponge cake with whipped cream and a smooth vanilla flavor.', 450, 0, 0, '1 kg', 10),
+(1, 'Chocolate Cake', 'chocolate_cake.jpg', 'Rich and moist chocolate cake layered with silky chocolate ganache.', 500, 0, 0, '1 kg', 12),
+(2, 'Vanilla Cake', 'vanilla_cake.jpg\r\n', 'Classic vanilla sponge cake with whipped cream and a smooth vanilla flavor.', 450, 0, 0, '1 kg', 5),
 (3, 'Strawberry Cake', 'strawberry_cake.jpg', 'Fresh strawberry sponge cake layered with strawberry cream and glaze.', 480, 0, 0, '1 kg', 10),
 (4, 'Red Velvet Cake', 'red_velvet.jpg', 'Soft red sponge cake with cream cheese frosting, a delightful choice for special occasions.', 600, 0, 0, '1 kg', 10),
 (5, 'Black Forest Cake', 'black_forest.jpg', 'Layers of chocolate sponge, whipped cream, and cherries topped with chocolate shavings.', 500, 0, 0, '1 kg', 10),
@@ -106,7 +106,22 @@ INSERT INTO `cake_customizations` (`id`, `cake_id`, `size`, `flavour`, `toppings
 (3, 2, '0.5kg', 'Chocolate', '', '', '', 0, '2025-09-26 11:23:23'),
 (4, 2, '1kg', 'Chocolate', 'nuts', 'hello kitty', '', 100, '2025-09-27 03:18:07'),
 (5, 2, '1kg', 'Chocolate', 'nuts', 'hello kitty', '', 100, '2025-09-27 03:18:28'),
-(6, 6, '0.5kg', 'Chocolate', '', '', '', 0, '2025-09-27 03:20:43');
+(6, 6, '0.5kg', 'Chocolate', '', '', '', 0, '2025-09-27 03:20:43'),
+(7, 9, '0.5kg', 'Chocolate', '', '', '', 0, '2025-09-27 04:45:29'),
+(8, 6, '0.5kg', 'Chocolate', '', '', '', 0, '2025-09-27 07:55:52'),
+(9, 5, '1kg', 'Strawberry', 'nuts and chocochips', 'hello kitty', '', 200, '2025-09-28 04:43:33'),
+(10, 2, '0.5kg', 'Chocolate', '', '', '', 0, '2025-09-28 05:09:47'),
+(11, 3, '0.5kg', 'Chocolate', '', '', '', 0, '2025-09-28 05:12:24'),
+(12, 3, '0.5kg', 'Chocolate', '', '', '', 0, '2025-09-28 05:12:26'),
+(13, 1, '0.5kg', 'Chocolate', '', '', '', 0, '2025-09-28 05:13:07'),
+(14, 1, '0.5kg', 'Chocolate', '', '', '', 0, '2025-09-28 05:13:09'),
+(15, 2, '0.5kg', 'Chocolate', '', '', '', 0, '2025-09-28 07:12:15'),
+(16, 10, '2kg', 'Strawberry', 'nuts', 'hello kitty', '', 400, '2025-09-28 07:25:08'),
+(17, 10, '2kg', 'Strawberry', 'nuts', 'hello kitty', '', 400, '2025-09-28 08:10:34'),
+(18, 2, '0.5kg', 'Chocolate', '', '', '', 0, '2025-10-02 14:35:14'),
+(19, 2, '0.5kg', 'Chocolate', '', '', '', 0, '2025-10-02 14:35:38'),
+(20, 2, '0.5kg', 'Chocolate', '', '', '', 0, '2025-10-02 14:35:42'),
+(21, 10, '0.5kg', 'Chocolate', '', '', '', 0, '2025-10-02 16:25:53');
 
 -- --------------------------------------------------------
 
@@ -120,15 +135,25 @@ CREATE TABLE `cart` (
   `cake_id` int(10) UNSIGNED NOT NULL,
   `customization_id` int(10) UNSIGNED DEFAULT NULL,
   `quantity` int(10) UNSIGNED NOT NULL DEFAULT 1,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `size` varchar(20) DEFAULT '1/2 kg',
+  `flavour` varchar(50) DEFAULT '',
+  `toppings` varchar(100) DEFAULT '',
+  `message` varchar(255) DEFAULT '',
+  `extra_charges` int(11) DEFAULT 0,
+  `message_text` varchar(255) DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `cart`
 --
 
-INSERT INTO `cart` (`id`, `user_id`, `cake_id`, `customization_id`, `quantity`, `created_at`) VALUES
-(3, 5, 6, 6, 1, '2025-09-27 03:20:43');
+INSERT INTO `cart` (`id`, `user_id`, `cake_id`, `customization_id`, `quantity`, `created_at`, `size`, `flavour`, `toppings`, `message`, `extra_charges`, `message_text`) VALUES
+(4, 5, 9, 7, 1, '2025-09-27 04:45:29', '1/2 kg', '', '', '', 0, ''),
+(5, 5, 6, 8, 1, '2025-09-27 07:55:52', '1/2 kg', '', '', '', 0, ''),
+(12, 6, 2, 15, 1, '2025-09-28 07:12:15', '1/2 kg', '', '', '', 0, ''),
+(14, 6, 10, 17, 1, '2025-09-28 08:10:34', '1/2 kg', '', '', '', 0, ''),
+(22, 8, 4, NULL, 1, '2025-10-02 21:40:55', '0.5', 'Chocolate', 'Choco Chips', '', 150, '');
 
 -- --------------------------------------------------------
 
@@ -144,6 +169,14 @@ CREATE TABLE `contact_messages` (
   `message` text NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `contact_messages`
+--
+
+INSERT INTO `contact_messages` (`id`, `name`, `email`, `subject`, `message`, `created_at`) VALUES
+(1, 'mamta', 'mamta@gmail.com', NULL, 'hellow  ..', '2025-09-29 13:42:00'),
+(2, 'fgdfbdf', 'ashish@gmail.com', NULL, 'gfbgfbgfbfdbdbgbrbgfb', '2025-10-02 21:01:17');
 
 -- --------------------------------------------------------
 
@@ -167,7 +200,41 @@ CREATE TABLE `orders` (
   `status_updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `takeaway` tinyint(1) DEFAULT 0,
   `payment_status` enum('Pending','Paid','Failed') NOT NULL DEFAULT 'Pending',
-  `payment_reference` varchar(255) DEFAULT NULL
+  `payment_reference` varchar(255) DEFAULT NULL,
+  `status_preparing` timestamp NULL DEFAULT NULL,
+  `status_shipped` timestamp NULL DEFAULT NULL,
+  `status_out_for_delivery` timestamp NULL DEFAULT NULL,
+  `status_delivered` timestamp NULL DEFAULT NULL,
+  `delivery_info` varchar(255) DEFAULT '',
+  `delivery_date` date DEFAULT NULL,
+  `size` varchar(10) DEFAULT '0.5',
+  `flavour` varchar(50) DEFAULT '',
+  `message` varchar(255) DEFAULT '',
+  `toppings` varchar(50) DEFAULT '',
+  `extra_charges` int(11) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `user_id`, `cake_id`, `customization_id`, `quantity`, `total_price`, `delivery_name`, `delivery_phone`, `delivery_address`, `payment_method`, `status`, `created_at`, `status_updated_at`, `takeaway`, `payment_status`, `payment_reference`, `status_preparing`, `status_shipped`, `status_out_for_delivery`, `status_delivered`, `delivery_info`, `delivery_date`, `size`, `flavour`, `message`, `toppings`, `extra_charges`) VALUES
+(1, 5, 6, 6, 1, 480, 'fggfh', '9076349229', '1499, rabale, navi mumbai , maharashtra, 400708', 'GPay', 'Pending', '2025-09-27 04:00:21', '2025-09-28 05:11:40', 1, 'Pending', NULL, NULL, NULL, NULL, NULL, '', NULL, '0.5', '', '', '', 0),
+(2, 9, 4, NULL, 1, 560, 'kknjjjjnj', '', '', 'GPay', 'Pending', '2025-10-02 22:36:30', '2025-10-02 22:36:30', 0, 'Pending', NULL, NULL, NULL, NULL, NULL, '', NULL, '0.5kg', 'vanilla', 'hello kitty', 'add nuts', -40),
+(3, 9, 11, NULL, 2, 2140, 'kknjjjjnj', '', '', 'GPay', 'Out for Delivery', '2025-10-02 22:36:30', '2025-10-02 22:36:30', 0, 'Pending', NULL, NULL, NULL, NULL, NULL, '', NULL, '2kg', 'strawberry', 'hello kitty', 'add nuts', 510),
+(4, 9, 4, NULL, 1, 660, 'fggfh', 'fdfdgfdgrtgtggf', 'gfgrgrgrgrgergregregr', 'GPay', 'Pending', '2025-10-02 22:37:56', '2025-10-02 22:37:56', 0, 'Pending', NULL, NULL, NULL, NULL, NULL, '', NULL, '1kg', '', 'add vanilla cream also in this cake, half strawberry and half vanilla', 'nuts', 60);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order_status_history`
+--
+
+CREATE TABLE `order_status_history` (
+  `id` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL,
+  `status` varchar(50) NOT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
@@ -218,7 +285,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `created_at`) VALUES
-(5, 'Mamta shripati kawde', 'mamta@gmail.com', '04f23283', '2025-09-27 03:17:08');
+(5, 'Mamta shripati kawde', 'mamta@gmail.com', 'e5fbfbc5', '2025-09-27 03:17:08'),
+(6, 'ashwini', 'ashwini@gmail.com', '4debcc77', '2025-09-28 04:40:52'),
+(8, 'ashish k', 'ashish@gmail.com', 'ashish@123', '2025-10-02 14:32:44'),
+(9, 'roshan d', 'roshan@gmail.com', 'roshan@123', '2025-10-02 21:57:52');
 
 --
 -- Indexes for dumped tables
@@ -269,6 +339,12 @@ ALTER TABLE `orders`
   ADD KEY `customization_id` (`customization_id`);
 
 --
+-- Indexes for table `order_status_history`
+--
+ALTER TABLE `order_status_history`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `password_resets`
 --
 ALTER TABLE `password_resets`
@@ -310,25 +386,31 @@ ALTER TABLE `cakes`
 -- AUTO_INCREMENT for table `cake_customizations`
 --
 ALTER TABLE `cake_customizations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `contact_messages`
 --
 ALTER TABLE `contact_messages`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `order_status_history`
+--
+ALTER TABLE `order_status_history`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `password_resets`
@@ -346,7 +428,7 @@ ALTER TABLE `reviews`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables
