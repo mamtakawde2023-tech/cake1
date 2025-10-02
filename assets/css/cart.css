@@ -1,0 +1,52 @@
+.cart-table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+.cart-table th, .cart-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.cart-table th {
+    background-color: #ff6b6b;
+    color: #fff;
+}
+
+.cart-table td {
+    background-color: #fff;
+}
+
+.cart-table img {
+    width: 80px;
+    border-radius: 5px;
+}
+
+.btn-remove, .btn-checkout {
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 2px;
+    transition: all 0.3s ease;
+}
+
+.btn-remove {
+    background-color: #f44336;
+    color: #fff;
+}
+
+.btn-remove:hover {
+    background-color: #d32f2f;
+}
+
+.btn-checkout {
+    background-color: #ff6b6b;
+    color: #fff;
+}
+
+.btn-checkout:hover {
+    background-color: #ff3b3b;
+}

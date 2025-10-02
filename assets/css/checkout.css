@@ -1,0 +1,71 @@
+.checkout-container {
+    width: 90%;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+.checkout-container h1, .checkout-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.checkout-form label {
+    font-weight: bold;
+    margin-top: 15px;
+    display: block;
+}
+
+.checkout-form input, .checkout-form select, .checkout-form textarea {
+    width: 100%;
+    padding: 8px 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.checkout-form .order-summary {
+    background: #f8f8f8;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.checkout-form .order-summary p {
+    margin: 5px 0;
+}
+
+.checkout-form .total-price {
+    font-weight: bold;
+    text-align: right;
+    font-size: 1.1rem;
+}
+
+.btn-place-order {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff6b6b;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.btn-place-order:hover {
+    background-color: #ff3b3b;
+}
+
+.message {
+    text-align: center;
+    color: green;
+    font-weight: bold;
+    margin-bottom: 15px;
+}

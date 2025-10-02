@@ -1,0 +1,57 @@
+.admin-container {
+    width: 95%;
+    margin: 20px auto;
+    overflow-x: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.admin-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-container th, .admin-container td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.admin-container th {
+    background-color: #ff6b6b;
+    color: #fff;
+}
+
+.admin-container td {
+    background-color: #fff;
+}
+
+.admin-container img {
+    width: 80px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.btn-update {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-update:hover {
+    background-color: #45a049;
+}
+
+select {
+    padding: 4px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}

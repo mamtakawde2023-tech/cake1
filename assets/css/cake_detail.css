@@ -1,0 +1,79 @@
+.cake-detail-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.cake-detail-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cake-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.customization-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.customization-form label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.customization-form input[type="text"],
+.customization-form input[type="number"],
+.customization-form input[type="file"],
+.customization-form select {
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.customization-form button.btn-order {
+    margin-top: 15px;
+    padding: 10px 18px;
+    background-color: #ff6b6b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.customization-form button.btn-order:hover {
+    background-color: #ff3b3b;
+}
+
+.message {
+    color: green;
+    font-weight: bold;
+    margin: 10px 0;
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+    .cake-detail-container {
+        padding: 15px;
+    }
+    .customization-form input, 
+    .customization-form select, 
+    .customization-form button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}

@@ -1,0 +1,39 @@
+.orders-container {
+    width: 95%;
+    margin: 20px auto;
+    overflow-x: auto;
+}
+
+.orders-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.orders-container th, .orders-container td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.orders-container th {
+    background-color: #ff6b6b;
+    color: #fff;
+}
+
+.orders-container td {
+    background-color: #fff;
+}
+
+.order-img {
+    width: 80px;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Status colors */
+.status-confirmed { background-color: #d1f7d6; color: #1a7f1a; font-weight: bold; }
+.status-prepared { background-color: #fff3cd; color: #856404; font-weight: bold; }
+.status-shipped { background-color: #d1ecf1; color: #0c5460; font-weight: bold; }
+.status-out-for-delivery { background-color: #ffe5b4; color: #8b4513; font-weight: bold; }
+.status-delivered { background-color: #c3e6cb; color: #155724; font-weight: bold; }
+.status-pending { background-color: #f8d7da; color: #721c24; font-weight: bold; }

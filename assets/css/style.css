@@ -1,0 +1,272 @@
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fff0f5; /* soft pink background */
+}
+
+h1, h2, h3 {
+    font-family: 'Pacifico', cursive;
+}
+
+a {
+    text-decoration: none;
+}
+
+button, .btn-primary, .btn-secondary {
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* Header */
+header {
+    background: #ff4d6d;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+
+/* Logo and brand name */
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo img {
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.logo h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 28px;
+    color: white;
+    margin: 0;
+}
+
+/* Navigation menu */
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    padding: 8px 15px;
+    transition: color 0.3s ease;
+}
+
+/* Hover color */
+.nav-menu a:hover {
+    color: #ffe6ec; /* light pink on hover */
+}
+
+/* Underline animation */
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+
+/* Nav links as buttons */
+/* Navigation menu (horizontal) */
+.nav-menu {
+    list-style: none;
+    display: flex;              /* <-- makes items horizontal */
+    justify-content: center;    /* center the menu */
+    align-items: center;
+    gap: 20px;                  /* space between items */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li {
+    display: inline-block;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    padding: 10px 18px;
+    border-radius: 25px;
+    background: #e6004c;
+    transition: all 0.3s ease;
+}
+
+
+/* Underline animation */
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 6px;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-menu a:hover::after {
+    width: 60%;
+}
+
+
+/* Hero Banner */
+.hero-banner {
+    position: relative;
+    text-align: center;
+}
+
+.hero-banner img {
+    width: 100%;
+    max-height: 450px;
+    object-fit: cover;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.4);
+}
+
+.hero-text p {
+    font-size: 22px;
+    margin: 15px 0;
+}
+
+.btn-primary {
+    background: #ff1a4d;
+    color: #fff;
+    padding: 12px 25px;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #ff4d6d;
+}
+
+/* Cakes Section */
+.cakes-section {
+    padding: 50px 20px;
+    text-align: center;
+    background: #fff5f8;
+}
+
+.cakes-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.cake-item {
+    background: #fff0f5;
+    padding: 20px;
+    border-radius: 15px;
+    width: 250px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.cake-item:hover {
+    transform: translateY(-5px);
+}
+
+.cake-item img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.cake-item h3 {
+    color: #ff1a4d;
+    margin: 15px 0 10px;
+}
+
+.btn-secondary {
+    background: #ff4d6d;
+    color: #fff;
+    padding: 10px 20px;
+    transition: background 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: #ff1a4d;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 50px 20px;
+    background: #ffe6f0;
+    text-align: center;
+}
+
+.contact-section form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-section input, .contact-section textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ff99aa;
+    font-size: 16px;
+    resize: none;
+}
+
+.contact-section button {
+    background: #ff4d6d;
+    color: #fff;
+    padding: 12px;
+    font-size: 16px;
+}
+
+.contact-section button:hover {
+    background: #ff1a4d;
+}
+
+/* Footer */
+footer {
+    background: #ff1a4d;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+}
