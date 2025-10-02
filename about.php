@@ -15,17 +15,19 @@ include "includes/db_connect.php";
 
 <?php include "includes/header.php"; ?>
 
-<section class="about-section" style="max-width:900px; margin:30px auto; padding:20px; text-align:center;">
-    <h1>About Us</h1>
-    <p>Welcome to <strong>Cake Lovers</strong>! We create delicious cakes for all occasions — birthdays, weddings, anniversaries, and more.</p>
-    <p>All our cakes are freshly baked using the finest ingredients and crafted with love. We also provide customization options to make your celebrations extra special.</p>
+<section class="about-section" style="max-width:900px; margin:30px auto; padding:30px; text-align:center; background:#fff0f5; border-radius:10px; box-shadow:0 0 15px rgba(0,0,0,0.1);">
+    <h1 style="color:#ff69b4; margin-bottom:20px;">About Cake Lovers</h1>
     
-    <h2>Our Bakery Address</h2>
+    <p>Welcome to <strong>Cake Lovers</strong>! We craft <span style="color:#ff1493;">delicious cakes</span> for all your special occasions — birthdays, weddings, anniversaries, and more.</p>
+    
+    <p>Every cake is freshly baked using the finest ingredients and designed with love. We offer <strong>customization options</strong> so you can make your celebration truly unforgettable.</p>
+    
+    <h2 style="color:#ff69b4; margin-top:30px;">Our Bakery</h2>
     <p>123 Sweet Street, Dessert City, 456789</p>
-    <p>Email: info@cakelovers.com | Phone: +91 98765 43210</p>
+    <p>Email: <strong>info@cakelovers.com</strong> | Phone: <strong>+91 98765 43210</strong></p>
     <p>Opening Hours: Mon-Sat 9:00 AM - 8:00 PM</p>
     
-    <img src="images/about_us.jpg" alt="About Us" style="width:100%; max-width:500px; margin-top:20px; border-radius:10px;">
+    <p style="margin-top:20px; font-style:italic; color:#555;">“Bringing joy, one slice at a time!”</p>
 </section>
 
 <?php include "includes/footer.php"; ?>
